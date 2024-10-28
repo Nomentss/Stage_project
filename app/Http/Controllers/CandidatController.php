@@ -147,7 +147,7 @@ class CandidatController extends Controller
         // prendre timestamp et associer avec le nom de fichier ex:12654_cv.pdf
         $fileName = time().'_'.$file->getClientOriginalName();
         // specifier le repertoire du fichier
-        $filePath = $file->storeAs('cvs/', $fileName, 'public');
+        $filePath = $file->storeAs('cvs', $fileName, 'public');
 
         $cv_path = CV::create([
 
