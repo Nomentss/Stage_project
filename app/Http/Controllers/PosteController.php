@@ -20,7 +20,7 @@ class PosteController extends Controller
     {
         $poste= Poste::all();
 
-        return view('poste.Poste', compact('poste'));
+        return view('Poste.Poste', compact('poste'));
     }
 
     public function insert_poste(Request $request)

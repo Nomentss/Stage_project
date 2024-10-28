@@ -11,7 +11,7 @@ class StatistiqueController extends Controller
         $mois = DB::table('mois')
                 ->get();
 
-        return view ('statistique.showStat', compact('mois'));
+        return view ('Statistique.showStat', compact('mois'));
     }
 
     // statistique generale par genre par mois, on doit choisir une annee
