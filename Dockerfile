@@ -5,7 +5,8 @@ FROM php:8.3-apache
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     git \
-    && docker-php-ext-install zip
+    && docker-php-ext-install zip \
+    && docker-php-ext-install pdo pdo_pgsql zip
 
 # Activer le module rewrite d'Apache pour Laravel
 RUN a2enmod rewrite
