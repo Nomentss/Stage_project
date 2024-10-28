@@ -152,7 +152,7 @@ class CandidatController extends Controller
         $cv_path = CV::create([
 
             'file_name' => $fileName,
-            'file_path' => '/storage/' . $filePath, $filePath,
+            'file_path' => '/storage/' . $filePath,
         ]);
 
         $candidat = Candidat::create([ 
