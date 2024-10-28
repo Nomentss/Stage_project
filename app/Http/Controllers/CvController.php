@@ -24,7 +24,7 @@ class CvController extends Controller
 
         CV::create([
             'file_name' => $fileName,
-            'file_path' => '/storage/' . $filePath, $filePath,
+            'file_path' => '/storage/' . $filePath,
         ]);
 
         // dump("vita ny insertion");
