@@ -10,6 +10,7 @@ use App\Models\Historique_statu;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Storage;
 
 class CandidatController extends Controller
 {
@@ -149,23 +150,26 @@ class CandidatController extends Controller
         // specifier le repertoire du fichier
         $filePath = $file->storeAs('cvs', $fileName, 'public');
 
-        $cv_path = CV::create([
+        $files = Storage::disk('public')->files('cvs');
+        return response()->json($files);
 
-            'file_name' => $fileName,
-            'file_path' => '/storage/' . $filePath,
-        ]);
+        // $cv_path = CV::create([
 
-        $candidat = Candidat::create([ 
-            'nom' => $request->nom,
-            'specialisation' => $request->specialisation,
-            'genre' => $request->genre,
-            'id_poste' => $request->poste_postule,
-            'date_postule' => $request->date_postule,
-            'id_statu' => 1,
-            'id_cv_path' => $cv_path->id,
-        ]);
+        //     'file_name' => $fileName,
+        //     'file_path' => '/storage/' . $filePath,
+        // ]);
 
-        // dump("vita ny insertion");
-        return redirect()->route('showCandidats');
+        // $candidat = Candidat::create([ 
+        //     'nom' => $request->nom,
+        //     'specialisation' => $request->specialisation,
+        //     'genre' => $request->genre,
+        //     'id_poste' => $request->poste_postule,
+        //     'date_postule' => $request->date_postule,
+        //     'id_statu' => 1,
+        //     'id_cv_path' => $cv_path->id,
+        // ]);
+
+        // // dump("vita ny insertion");
+        // return redirect()->route('showCandidats');
     }
 }
