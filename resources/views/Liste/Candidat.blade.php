@@ -88,7 +88,7 @@
                 @endif
                 <div class="table-responsive">
                   <table class="table table-hover table-bordered">
-                    <thead class="thead-dark">
+                    <thead class="thead">
                       <tr >
                         <th>Nom</th>
                         {{-- <th>Specialisation</th> --}}

@@ -167,7 +167,7 @@ insert into suggestion_message(nom,message) values('Demande entretien','Bonjour,
 insert into suggestion_message(nom,message) values('Refuser','Bonjour, Nous somme sincerement desole de vous annoncer que nous ne somme pas interresse sur votre candidature');
 insert into suggestion_message(nom,message) values('Mettre en attente','Bonjour, Nous somme heureux de recevoir votre candidature nous vous contacterons lorsque un poste sera disponible');
 
-insert into statu(nom) values ('En cours'),('Embauche'),('non admis(e)');
+insert into statut(nom) values ('En cours'),('Embauche'),('non admis(e)');
 
 INSERT INTO mois(nom, numero) 
 VALUES 
@@ -258,8 +258,7 @@ select sum(nombre) as nombre, genre, annee from v_stat_genre group by genre, ann
   create view v_entretien as
   select r.id, r.id_user, q.id as id_question, q.question, r.id_reponse, r.reponse, rq.note, q.id_poste from reponse_entretien r
   JOIN questionnaire q on r.id_question = q.id
-  LEFT JOIN reponse_questionnaire rq on r.id_reponse = rq.id
-  ;
+  LEFT JOIN reponse_questionnaire rq on r.id_reponse = rq.id;
 
   select id_question, question from v_entretien group by id_question, question;
   select id_reponse, reponse, note from v_entretien where id_question=3;
@@ -305,4 +304,4 @@ ON
 n.id = nr.id_notification
 JOIN users u 
 ON
-n.id_user = u.id
+n.id_user = u.id;
