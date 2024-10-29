@@ -31,7 +31,7 @@ use Illuminate\Support\Facades\File;
 */
 
 Route::get('/', function () {
-    return view('auth_recruteur/login');
+    return view('auth_client/login');
 });
 
 Route::middleware(['auth', 'role:0'])->group(function () {
