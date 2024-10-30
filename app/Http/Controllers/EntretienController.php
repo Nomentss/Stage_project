@@ -175,7 +175,7 @@ class EntretienController extends Controller
                             // separer id et reponse et stocker dans des variables
                             list($idReponse, $reponseTexte) = explode('/', $reponse[$i][$j]);
 
-                            dump($idReponse, $reponseTexte);
+                            // dump($idReponse, $reponseTexte);
 
                             // insertion de la reponse
                             DB::table('reponse_entretien')->insert([
